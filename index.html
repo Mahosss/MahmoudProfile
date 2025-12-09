@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahmoud Xat Frame</title>
-
-<!-- خط Tajawal -->
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -29,7 +27,7 @@ body {
     padding: 30px;
     margin-top: 40px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0,224,255,0.5);
+    box-shadow: 0 0 25px rgba(0,224,255,0.5);
 }
 
 .avatar {
@@ -38,6 +36,11 @@ body {
     border-radius: 50%;
     border: 4px solid #00e0ff;
     object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00e0ff;
 }
 
 .name {
@@ -50,6 +53,7 @@ body {
     font-size: 18px;
     color: #ccc;
     margin-top: 5px;
+    line-height: 1.5;
 }
 
 .videos {
@@ -66,12 +70,18 @@ body {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,224,255,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .video-card iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00e0ff;
 }
 
 .social {
@@ -81,42 +91,50 @@ body {
     gap: 15px;
 }
 
-.social svg {
-    width: 40px;
-    height: 40px;
-    fill: #00e0ff;
-    transition: transform 0.3s;
+.social img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
 }
 
-.social svg:hover {
+.social img:hover {
     transform: scale(1.2);
+    box-shadow: 0 0 15px #00e0ff;
 }
 </style>
-
 </head>
 <body>
 
 <div class="container">
     <img class="avatar" src="https://i.imgur.com/aZ3I3zG.png" alt="Avatar">
     <div class="name">¨̶ζ̶̶̶̶̷͜͟͡Maђϻoud</div>
-    <div class="status">I Love Talking To You , Even Thought I Have No Thing To Say.
-في غيابك ماتغير أي شي بس حسيت أني فاقد كل شي
+    <div class="status">
+       I Love Talking To You , Even Thought I Have No Thing To Say.
+
+<br>
+       في غيابك ماتغير أي شي بس حسيت أني فاقد كل شي
+
+
     </div>
 
-
     <div class="videos">
-        <!-- مثال لفيديو -->
+
         <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk?si=bE9Ey4R727KLzWPM" allowfullscreen></iframe>
         </div>
     </div>
 
     <div class="social">
-        <!-- مثال أيقونة YouTube -->
+
+        <a href="https://www.facebook.com/chatmelodylovers/" title="Facebook">
+            <img src="https://img.alfrsantv.com/img/f176524104576151.png" alt="Facebook">
+        </a>
+        <a href="#" title="Instagram">
+            <img src="https://i.imgur.com/kxFfZx5.png" alt="Instagram">
+        </a>
         <a href="#" title="YouTube">
-            <svg viewBox="0 0 24 24">
-                <path d="M19.615 3.184C18.403 2.447 12 2.447 12 2.447s-6.403 0-7.615.737C3.102 4.02 3 6 3 6s0 2.034.385 2.816c1.212.737 7.615.737 7.615.737s6.403 0 7.615-.737C20.898 8.034 21 6 21 6s-.102-1.98-1.385-2.816zM10 8v4l3-2-3-2z"/>
-            </svg>
+            <img src="https://i.imgur.com/Q9H2J2f.png" alt="YouTube">
         </a>
     </div>
 </div>
