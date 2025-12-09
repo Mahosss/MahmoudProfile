@@ -193,9 +193,20 @@ body {
     font-size: 32px;
     margin-top: 15px;
     font-weight: bold;
-    color: #00e0ff;
-    animation: pulse 1.8s infinite;
+    color: #d4d4d4;
+    background: linear-gradient(90deg, #ffffff, #b8b8b8, #7a7a7a, #b8b8b8, #ffffff);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: metal 3s ease-in-out infinite;
 }
+
+@keyframes metal {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
 
 @keyframes pulse {
     0% { text-shadow: 0 0 5px #00e0ff; }
