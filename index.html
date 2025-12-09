@@ -31,6 +31,10 @@ body {
     box-shadow: 0 0 25px rgba(0,224,255,0.5);
 }
 
+/* ===========================
+      الصورة + اللمعة + الوهج
+   =========================== */
+
 .avatar-container {
     position: relative;
     width: 180px;
@@ -40,6 +44,12 @@ body {
     padding: 5px;
     background: #ffffff;
     overflow: hidden;
+    transition: box-shadow 0.4s ease;
+}
+
+/* وهج عند المرور */
+.avatar-container:hover {
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
 }
 
 .avatar {
@@ -47,30 +57,55 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    transition: transform 0.45s ease;
 }
 
+/* تكبير الصورة عند الوقوف */
+.avatar-container:hover .avatar {
+    transform: scale(1.12);
+}
+
+/* طبقة اللمعة */
 .shine-layer {
     position: absolute;
     top: 0;
-    left: -120%;
-    width: 130%;
-    height: 130%;
-    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
-    transform: rotate(25deg);
-    animation: shiny 3s infinite ease-in-out;
+    left: -130%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.55) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shineMove 3s linear infinite;
+    opacity: 0;
 }
 
-@keyframes shiny {
-    0% { left: -120%; opacity: 0; }
-    40% { opacity: 1; }
-    70% { left: 120%; opacity: 1; }
-    100% { opacity: 0; }
+@keyframes shineMove {
+    0%   { left: -130%; opacity: 0; }
+    30%  { opacity: 0.7; }
+    50%  { left: 130%; opacity: 0.6; }
+    100% { left: 130%; opacity: 0; }
 }
+
+/* =========================== */
 
 .name {
     font-size: 32px;
     margin-top: 15px;
     font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #ffffff, #b8b8b8, #7a7a7a, #b8b8b8, #ffffff);
+    -webkit-background-clip: text;
+    background-size: 200%;
+    animation: metal 3s ease-in-out infinite;
+}
+
+@keyframes metal {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
 }
 
 .status {
@@ -89,6 +124,8 @@ body {
 }
 
 
+/* ======= صندوق الفيديوهات ======= */
+
 .videos-box {
     margin-top: 25px;
     background: rgba(0,0,0,0.4);
@@ -106,10 +143,7 @@ body {
     scroll-behavior: smooth;
     padding-bottom: 10px;
 }
-
-.videos-scroll::-webkit-scrollbar {
-    display: none;
-}
+.videos-scroll::-webkit-scrollbar { display: none; }
 
 .video-card {
     flex: 0 0 150px;
@@ -121,15 +155,15 @@ body {
     transition: 0.3s;
 }
 
+.video-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00e0ff;
+}
+
 .video-card iframe {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-.video-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px #00e0ff;
 }
 
 .scroll-btn {
@@ -156,13 +190,11 @@ body {
     transform: translateY(-50%) scale(1.1);
 }
 
-.left-btn {
-    left: 10px;
-}
+.left-btn { left: 10px; }
+.right-btn { right: 10px; }
 
-.right-btn {
-    right: 10px;
-}
+
+/* ===== أيقونات السوشيال ===== */
 
 .social {
     margin-top: 25px;
@@ -182,32 +214,6 @@ body {
     transform: scale(1.2);
     box-shadow: 0 0 15px #00e0ff;
 }
-
-
-
-
-
-
-
-  
-
-.name {
-    font-size: 32px;
-    margin-top: 15px;
-    font-weight: bold;
-    background: linear-gradient(45deg, #b8860b, #ffd700, #fff1a8, #ffd700, #b8860b);
-    background-size: 300%;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: gold 4s ease-in-out infinite;
-}
-
-@keyframes gold {
-    0% { background-position: 0%; }
-    50% { background-position: 100%; }
-    100% { background-position: 0%; }
-}
-
 
 </style>
 </head>
