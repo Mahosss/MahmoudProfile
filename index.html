@@ -189,27 +189,16 @@ body {
 
 
 
-    .name {
+   .name {
     font-size: 32px;
     margin-top: 15px;
     font-weight: bold;
-    background: linear-gradient(90deg, #00e0ff, #7c3aed, #00e0ff);
-    background-size: 200%;
+    background: linear-gradient(45deg, #00e0ff, #7c3aed);
     -webkit-background-clip: text;
     color: transparent;
-    animation: neonMove 3s linear infinite, neonGlow 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(0,224,255,0.5);
 }
 
-@keyframes neonMove {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-}
-
-@keyframes neonGlow {
-    0% { text-shadow: 0 0 8px #00e0ff; }
-    50% { text-shadow: 0 0 18px #7c3aed; }
-    100% { text-shadow: 0 0 8px #00e0ff; }
-}
 
 </style>
 </head>
