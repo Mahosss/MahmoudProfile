@@ -16,6 +16,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
@@ -29,6 +30,7 @@ body {
     box-shadow: 0 0 25px rgba(0,224,255,0.5);
 }
 
+/* الصورة الدائرية مع الغلاف الأبيض واللمعة */
 .avatar-container {
     position: relative;
     display: inline-block;
@@ -46,30 +48,42 @@ body {
     border-radius: 50%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s;
 }
 
 .avatar-container:hover .avatar {
     transform: scale(1.1);
-    transition: transform 0.3s;
 }
 
-/* لمعة  */
+/* لمعة سلسة ومتكررة */
 .shine-layer {
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
     transform: skewX(-25deg);
     pointer-events: none;
-    animation: shineAnim 2s infinite;
+    animation: shineAnim 2.5s infinite linear;
 }
 
 @keyframes shineAnim {
-    0% { left: -100%; opacity: 0; }
-    50% { left: 100%; opacity: 0.7; }
-    100% { left: 100%; opacity: 0; }
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* الرموز العائمة عشوائية */
+.emoji {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-180px) scale(1.2); opacity: 0; }
 }
 
 /* الاسم والحالة */
@@ -96,18 +110,24 @@ body {
     box-shadow: 0 0 8px #2a2a3c, 0 0 15px rgba(42,42,60,0.5);
 }
 
-/* الفيديوهات جنب بعض (أفقي) وطولية */
+/* الفيديوهات Scroll أفقي */
 .videos {
     margin-top: 30px;
-    display: flex;             /* ترتيب أفقي */
-    gap: 15px;                 /* المسافة بين الفيديوهات */
-    justify-content: center;   /* توسيط الفيديوهات */
-    align-items: flex-start;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.videos::-webkit-scrollbar { /* Chrome & Safari */
+    display: none;
 }
 
 .video-card {
-    width: 150px;   /* عرض ضيق */
-    height: 250px;  /* ارتفاع طويل مثل حالات واتس */
+    flex: 0 0 auto;
+    width: 120px;
+    height: 300px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,224,255,0.4);
@@ -125,6 +145,7 @@ body {
     box-shadow: 0 0 25px #00e0ff;
 }
 
+/* وسائل التواصل */
 .social {
     margin-top: 25px;
     display: flex;
@@ -143,18 +164,26 @@ body {
     transform: scale(1.2);
     box-shadow: 0 0 15px #00e0ff;
 }
-
 </style>
 </head>
 <body>
 
 <div class="container">
 
+    <!-- الصورة مع الغلاف الأبيض واللمعة -->
     <div class="avatar-container">
         <img class="avatar" src="https://img.alfrsantv.com/img/f176506150966251.png" alt="Avatar">
         <div class="shine-layer"></div>
+
+        <!-- الرموز العائمة بعشوائية -->
+        <div class="emoji" style="left:10%; color:#ff4f9a; animation-duration: 4s;">❤️</div>
+        <div class="emoji" style="left:30%; color:#a8ff60; animation-duration: 5s;">💖</div>
+        <div class="emoji" style="left:50%; color:#ffd700; animation-duration: 6s;">🌸</div>
+        <div class="emoji" style="left:70%; color:#00d4ff; animation-duration: 4.5s;">✨</div>
+        <div class="emoji" style="left:85%; color:#ff69b4; animation-duration: 5.5s;">💙</div>
     </div>
 
+    <!-- الاسم والحالة -->
     <div class="name">¨̶ζ͜͡Maђϻoud</div>
     <div class="status">
        I Love Talking To You, Even Though I Have Nothing To Say.<br>
@@ -163,25 +192,43 @@ body {
 
     <div class="custom-divider"></div>
 
+    <!-- فيديوهات أفقي Scroll -->
     <div class="videos">
         <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk?autoplay=1" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk?autoplay=0" allowfullscreen></iframe>
         </div>
         <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/HVgy8Ge0GJQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/HVgy8Ge0GJQ?autoplay=0" allowfullscreen></iframe>
         </div>
         <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/1uMZhJeXLYw" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/1uMZhJeXLYw?autoplay=0" allowfullscreen></iframe>
         </div>
     </div>
 
+    <!-- وسائل التواصل -->
     <div class="social">
         <a href="https://www.facebook.com/chatmelodylovers/" title="Facebook">
-            <img src="https://img.alfrsantv.com/img/f176524104576151.png" alt="Facebook">       
+            <img src="https://img.alfrsantv.com/img/f17652540066871.png" alt="Facebook">       
+        </a>
+        <a href="https://twitter.com/username" title="chat">
+            <img src="https://img.alfrsantv.com/img/f176525408240721.png" alt="Twitter">
         </a>
     </div>
 
 </div>
+
+<script>
+// الرموز العائمة تتحرك بشكل عشوائي عند تحميل الصفحة
+const emojis = document.querySelectorAll('.emoji');
+emojis.forEach(e => {
+    const duration = Math.random() * 3 + 3; // مدة عشوائية بين 3 و 6 ثواني
+    e.style.animationDuration = duration + 's';
+    e.style.bottom = '0px';
+    e.style.animationName = 'floatUp';
+    e.style.animationIterationCount = 'infinite';
+    e.style.animationTimingFunction = 'linear';
+});
+</script>
 
 </body>
 </html>
