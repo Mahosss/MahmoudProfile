@@ -20,7 +20,6 @@ body {
     min-height: 100vh;
 }
 
-/* ====== Container ====== */
 .container {
     max-width: 900px;
     width: 90%;
@@ -32,7 +31,6 @@ body {
     box-shadow: 0 0 25px rgba(0,224,255,0.5);
 }
 
-/* ====== Avatar + Shine Effect ====== */
 .avatar-container {
     position: relative;
     width: 180px;
@@ -69,7 +67,6 @@ body {
     100% { opacity: 0; }
 }
 
-/* ====== Text ====== */
 .name {
     font-size: 32px;
     margin-top: 15px;
@@ -82,7 +79,6 @@ body {
     line-height: 1.6;
 }
 
-/* ====== Divider ====== */
 .custom-divider {
     width: 50%;
     height: 3px;
@@ -92,7 +88,6 @@ body {
     box-shadow: 0 0 10px #2a2a3c;
 }
 
-/* ====== VIDEOS SCROLLER BOX ====== */
 
 .videos-box {
     margin-top: 25px;
@@ -104,7 +99,6 @@ body {
     overflow: hidden;
 }
 
-/* شريط الفيديوهات */
 .videos-scroll {
     display: flex;
     gap: 15px;
@@ -117,7 +111,6 @@ body {
     display: none;
 }
 
-/* الفيديو الواحد */
 .video-card {
     flex: 0 0 150px;
     height: 260px;
@@ -134,13 +127,11 @@ body {
     border: none;
 }
 
-/* عند الوقوف */
 .video-card:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px #00e0ff;
 }
 
-/* ====== Scroll Buttons ====== */
 .scroll-btn {
     position: absolute;
     top: 50%;
@@ -173,7 +164,6 @@ body {
     right: 10px;
 }
 
-/* ====== Social Icons ====== */
 .social {
     margin-top: 25px;
     display: flex;
@@ -193,13 +183,40 @@ body {
     box-shadow: 0 0 15px #00e0ff;
 }
 
+
+
+
+
+
+
+    .name {
+    font-size: 32px;
+    margin-top: 15px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00e0ff, #7c3aed, #00e0ff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: neonMove 3s linear infinite, neonGlow 2s ease-in-out infinite;
+}
+
+@keyframes neonMove {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 8px #00e0ff; }
+    50% { text-shadow: 0 0 18px #7c3aed; }
+    100% { text-shadow: 0 0 8px #00e0ff; }
+}
+
 </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Avatar -->
     <div class="avatar-container">
         <img class="avatar" src="https://img.alfrsantv.com/img/f176506150966251.png">
         <div class="shine-layer"></div>
@@ -214,7 +231,6 @@ body {
 
     <div class="custom-divider"></div>
 
-    <!-- Videos Slider Box -->
     <div class="videos-box">
 
         <div class="scroll-btn left-btn" onclick="scrollVideos(-300)">❮</div>
@@ -241,7 +257,6 @@ body {
         </div>
     </div>
 
-    <!-- Social Icons -->
     <div class="social">
         <a href="https://www.facebook.com/chatmelodylovers/">
             <img src="https://img.alfrsantv.com/img/f17652540066871.png">
