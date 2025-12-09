@@ -189,14 +189,18 @@ body {
 
 
 
-   .name {
+  .name {
     font-size: 32px;
     margin-top: 15px;
     font-weight: bold;
-    background: linear-gradient(45deg, #00e0ff, #7c3aed);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 10px rgba(0,224,255,0.5);
+    color: #00e0ff;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 5px #00e0ff; }
+    50% { text-shadow: 0 0 20px #7c3aed; }
+    100% { text-shadow: 0 0 5px #00e0ff; }
 }
 
 
