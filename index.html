@@ -21,13 +21,28 @@ body {
   direction: rtl;
 }
 
+/* ----------- الهيكلية ----------- */
 .wrapper {
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  align-items: flex-start; /* يجعل info-box يبدأ من بداية الصورة */
+  flex-wrap: wrap;
 }
 
+.profile-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* محاذاة من الأعلى مع الصورة */
+}
+
+/* ----------- الصورة ----------- */
 .profile-pic {
   width: 220px;
   height: 220px;
@@ -57,34 +72,26 @@ body {
 
 .name {
   font-size: 26px;
-  color: #005995; 
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-
-
-
-.name {
-  font-size: 26px;
   font-weight: bold;
   background: linear-gradient(90deg, #1abc9c, #3498db, #1abc9c); /* ألوان شبابية */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%; /* لتوسيع الخلفية للانزلاق */
   animation: gradient-slide 3s linear infinite;
+  margin-bottom: 10px;
 }
 
 @keyframes gradient-slide {
   0% { background-position: 0% 0%; }
   100% { background-position: 200% 0%; }
 }
+
 /* ----------- المعلومات ----------- */
 .info-box {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 0; /* إزالة المسافة العلوية */
 }
 
 .info-row {
@@ -173,16 +180,6 @@ body {
   transform: scale(1.1);
 }
 
-
-
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-
 /* الهواتف: أقل من 600px */
 @media (max-width: 600px) {
   .wrapper {
@@ -209,20 +206,6 @@ body {
     height: 200px;
   }
 }
-
-
-
-.video-block {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap; /* يسمح للخط الثاني إذا ضاقت الشاشة */
-}
-.quote-box {
-  width: 100%;
-  max-width: 600px;
-}
-
 </style>
 </head>
 
@@ -230,7 +213,7 @@ body {
 
 <div class="wrapper">
 
-  <div>
+  <div class="profile-column">
     <div class="profile-pic">
       <img src="https://img.alfrsantv.com/img/f176506150966251.png" alt="profile">
     </div>
@@ -240,35 +223,41 @@ body {
     </div>
   </div>
 
-  <div class="info-box">
+  <div class="info-column">
+    <div class="info-box">
 
-  <div class="info-row">
-    <div class="q"><i class="fas fa-map-marker-alt"></i> البلد:</div>
-    <div class="a">مصر</div>
-  </div>
+      <div class="info-row">
+        <div class="q"><i class="fas fa-map-marker-alt"></i> البلد:</div>
+        <div class="a">مصر</div>
+      </div>
 
-  <div class="info-row">
-    <div class="q"><i class="fas fa-palette"></i> اللون:</div>
-    <div class="a">أزرق / موف</div>
-  </div>
+      <div class="info-row">
+        <div class="q"><i class="fas fa-palette"></i> اللون:</div>
+        <div class="a">أزرق / موف</div>
+      </div>
 
-  <div class="info-row">
-    <div class="q"><i class="fas fa-smile"></i> المزاج:</div>
-    <div class="a">رايق</div>
-  </div>
-    
- <div class="info-row">
-    <div class="q"><i class="fas fa-lightbulb"></i> مهارات</div>
-    <div class="a">برمجة، تصميم</div>
-  </div>
-</div>
-  
-  <div class="info-row">
-    <div class="q"><i class="fas fa-comments"></i> الشات:</div>
-    <div class="a"> <a href="https://xat.com/melodylovers" target="_blank">شات ميلودى</a>
+      <div class="info-row">
+        <div class="q"><i class="fas fa-smile"></i> المزاج:</div>
+        <div class="a">رايق</div>
+      </div>
+
+      <div class="info-row">
+        <div class="q"><i class="fas fa-lightbulb"></i> مهارات</div>
+        <div class="a">برمجة، تصميم</div>
+      </div>
+
+      <div class="info-row">
+        <div class="q"><i class="fas fa-comments"></i> الشات:</div>
+        <div class="a">
+          شات ميلودى — 
+          <a href="https://xat.com/melodylovers" target="_blank">اضغط هنا</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
+</div>
 
 <!--  الجمل  -->
 <div class="quote-box">
@@ -276,13 +265,12 @@ body {
   <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
 </div>
 
-
 <div class="video-block">
   <iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk" title="YouTube video" frameborder="0" allowfullscreen></iframe>
 </div>
-  
+
 </body>
 </html>
