@@ -10,7 +10,7 @@
 
 <style>
 body {
-  background: #0f172a;
+  background: #0b0f1a;
   color: #fff;
   font-family: 'Tajawal', sans-serif;
   display: flex;
@@ -34,8 +34,8 @@ body {
   height: 220px;
   border-radius: 20px;
   overflow: hidden;
-  border: 3px solid #ff77c8;
-  box-shadow: 0 0 25px #ff77c880;
+  border: 3px solid #3498db; /* أزرق شبابي */
+  box-shadow: 0 0 25px #3498db80;
   transition: 0.4s;
 }
 
@@ -57,29 +57,9 @@ body {
 
 .name {
   font-size: 26px;
-  color: #ff9ada;
+  color: #1abc9c; /* أخضر شبابي */
   font-weight: bold;
   margin-bottom: 10px;
-}
-
-/* ----------- صندوق الجمل ----------- */
-.quote-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #ff77c880;
-  border-radius: 12px;
-  padding: 12px 15px;
-  width: 100%;
-  max-width: 300px;
-  margin-top: 10px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 15px #ff77c880;
-}
-
-.quote-box p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.4;
 }
 
 /* ----------- بطاقات المعلومات ----------- */
@@ -107,7 +87,7 @@ body {
 
 .info-row .q {
   font-weight: bold;
-  color: #ff77c8;
+  color: #3498db; /* أزرق */
   margin-bottom: 5px;
   font-size: 15px;
 }
@@ -118,13 +98,33 @@ body {
 }
 
 .info-row a {
-  color: #ff9ada;
+  color: #1abc9c; /* أخضر */
   text-decoration: none;
   font-weight: bold;
 }
 
 .info-row a:hover {
   text-decoration: underline;
+}
+
+/* ----------- صندوق الجمل أسفل الصفحة ----------- */
+.quote-box {
+  background: rgba(52, 152, 219, 0.1); /* أزرق داكن شفاف */
+  border: 1px solid #3498db80;
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px #3498db80;
+}
+
+.quote-box p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #ecf0f1;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -140,13 +140,6 @@ body {
 
     <div class="text-box">
       <div class="name">Mahmoud</div>
-      
-      <!-- صندوق الجمل -->
-      <div class="quote-box">
-        <p>I Love Talking To You , Even Though I Have Nothing To Say.</p>
-        <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
-      </div>
-      
     </div>
   </div>
 
@@ -159,7 +152,7 @@ body {
 
     <div class="info-row">
       <div class="q">اللون:</div>
-      <div class="a">بينك</div>
+      <div class="a">أزرق / أخضر</div>
     </div>
 
     <div class="info-row">
@@ -177,6 +170,12 @@ body {
 
   </div>
 
+</div>
+
+<!-- صندوق الجمل أسفل كل البلوك -->
+<div class="quote-box">
+  <p>I Love Talking To You , Even Though I Have Nothing To Say.</p>
+  <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
 </div>
 
 </body>
