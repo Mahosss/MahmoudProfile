@@ -65,7 +65,20 @@ body {
 
 
 
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #1abc9c, #3498db, #1abc9c); /* ألوان شبابية */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%; /* لتوسيع الخلفية للانزلاق */
+  animation: gradient-slide 3s linear infinite;
+}
 
+@keyframes gradient-slide {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
 /* ----------- المعلومات ----------- */
 .info-box {
   display: flex;
