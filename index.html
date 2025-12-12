@@ -15,7 +15,8 @@ body {
   font-family: 'Tajawal', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding: 40px;
   direction: rtl;
@@ -26,6 +27,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  justify-content: center;
 }
 
 /* ----------- الصورة ----------- */
@@ -53,6 +55,7 @@ body {
 /* ----------- الاسم ----------- */
 .text-box {
   margin-top: 10px;
+  text-align: center;
 }
 
 .name {
@@ -107,7 +110,7 @@ body {
   text-decoration: underline;
 }
 
-/* ----------- صندوق الجمل أسفل الصفحة ----------- */
+/* ----------- صندوق الجمل أسفل كل المحتوى ----------- */
 .quote-box {
   background: rgba(52, 152, 219, 0.1); /* أزرق داكن شفاف */
   border: 1px solid #3498db80;
@@ -118,6 +121,7 @@ body {
   margin-top: 30px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 15px #3498db80;
+  text-align: center;
 }
 
 .quote-box p {
@@ -172,7 +176,7 @@ body {
 
 </div>
 
-<!-- صندوق الجمل أسفل كل البلوك -->
+<!-- صندوق الجمل أسفل كل المحتوى -->
 <div class="quote-box">
   <p>I Love Talking To You , Even Though I Have Nothing To Say.</p>
   <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
