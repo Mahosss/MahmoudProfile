@@ -138,6 +138,33 @@ body {
   color: #ecf0f1;
   line-height: 1.5;
 }
+
+
+
+
+
+
+/* ----------- بلوك الفيديوهات ----------- */
+.video-block {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.video-block video {
+  width: 140px;  /* حجم صغير يشبه حالات واتساب */
+  height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 15px #3498db50;
+  transition: transform 0.3s;
+}
+
+.video-block video:hover {
+  transform: scale(1.1);
+}
 </style>
 </head>
 
@@ -190,5 +217,14 @@ body {
   <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
 </div>
 
+
+  <!-- بلوك الفيديوهات أسفل صندوق الجمل -->
+<div class="video-block">
+  <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+  <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+  <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+  <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+</div>
+  
 </body>
 </html>
