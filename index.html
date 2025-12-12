@@ -62,7 +62,32 @@ body {
   margin-bottom: 10px;
 }
 
-/* ----------- بطاقات المعلومات ----------- */
+
+
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #1abc9c, #3498db, #1abc9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite, gradientMove 5s linear infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #1abc9c, 0 0 10px #3498db;
+  }
+  50% {
+    text-shadow: 0 0 15px #1abc9c, 0 0 25px #3498db;
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* ----------- المعلومات ----------- */
 .info-box {
   display: flex;
   flex-direction: column;
@@ -113,7 +138,7 @@ body {
   text-decoration: underline;
 }
 
-/* ----------- صندوق الجمل ----------- */
+/* ----------- الجمل ----------- */
 .quote-box {
   background: rgba(52, 152, 219, 0.1); 
   border: 1px solid #3498db80;
