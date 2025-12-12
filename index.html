@@ -180,35 +180,58 @@ body {
   transform: scale(1.1);
 }
 
-/* الهواتف: أقل من 600px */
 @media (max-width: 600px) {
   .wrapper {
-    flex-direction: column; /* الصورة فوق الكروت */
+    flex-direction: column; 
     align-items: center;
     gap: 20px;
   }
 
   .info-box, .profile-pic {
-    width: 90%; /* يملأ العرض تقريبًا */
+    width: 90%; 
     max-width: 300px;
   }
 
   .video-block iframe {
-    width: 45%; /* الفيديوهات تصغر لتناسب الشاشة */
+    width: 45%; 
     height: 180px;
   }
 }
 
-/* التابلت: أقل من 900px */
 @media (max-width: 900px) {
   .video-block iframe {
-    width: 30%; /* تقليص حجم الفيديوهات للتابلت */
+    width: 30%; 
     height: 200px;
   }
 }
 
 
 
+/* للمتصفحات الحديثة (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;  /* عرض السكورول */
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f1a;  /* لون الخلفية للسكورول */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1abc9c, #3498db); /* لون الشريط */
+  border-radius: 6px;
+  border: 3px solid #0b0f1a; /* المسافة بين الشريط والحواف */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3498db, #1abc9c);
+}
+
+/* للـ Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1abc9c #0b0f1a; /* thumb color | track color */
+}
 
 </style>
 </head>
