@@ -64,27 +64,39 @@ body {
 
 
 
-/* تأثير اللمعة */
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1abc9c;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #1abc9c 0%, #1abc9c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+/* لمعة داخل النص */
 .name::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -75%;
+  left: -100%;
   width: 50%;
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.8) 50%,
+    rgba(255,255,255,0) 100%
   );
   transform: skewX(-20deg);
   animation: shine 2s infinite;
 }
 
 @keyframes shine {
-  0% { left: -75%; }
-  100% { left: 125%; }
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 /* ----------- المعلومات ----------- */
