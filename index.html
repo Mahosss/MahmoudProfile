@@ -172,6 +172,57 @@ body {
 .video-block iframe:hover {
   transform: scale(1.1);
 }
+
+
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+/* الهواتف: أقل من 600px */
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column; /* الصورة فوق الكروت */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .info-box, .profile-pic {
+    width: 90%; /* يملأ العرض تقريبًا */
+    max-width: 300px;
+  }
+
+  .video-block iframe {
+    width: 45%; /* الفيديوهات تصغر لتناسب الشاشة */
+    height: 180px;
+  }
+}
+
+/* التابلت: أقل من 900px */
+@media (max-width: 900px) {
+  .video-block iframe {
+    width: 30%; /* تقليص حجم الفيديوهات للتابلت */
+    height: 200px;
+  }
+}
+
+
+
+.video-block {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* يسمح للخط الثاني إذا ضاقت الشاشة */
+}
+.quote-box {
+  width: 100%;
+  max-width: 600px;
+}
+
 </style>
 </head>
 
