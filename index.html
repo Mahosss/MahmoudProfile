@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mahmoud</title>
 
+<!-- استدعاء خط Tajwal من Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   background: #0f172a;
   color: #fff;
-  font-family: "Cairo", sans-serif;
+  font-family: 'Tajawal', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -47,7 +50,7 @@ body {
   transform: scale(1.12);
 }
 
-/* ----------- الاسم + الجمل المتحركة ----------- */
+/* ----------- الاسم ----------- */
 .text-box {
   margin-top: 10px;
 }
@@ -59,19 +62,24 @@ body {
   margin-bottom: 10px;
 }
 
-/* تحريك الجمل بالتتابع */
-.moving-text {
-  font-size: 16px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
+/* ----------- صندوق الجمل ----------- */
+.quote-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ff77c880;
+  border-radius: 12px;
+  padding: 12px 15px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px #ff77c880;
 }
 
-.moving-text:nth-child(2) { animation-delay: 0s; }
-.moving-text:nth-child(3) { animation-delay: 2s; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+.quote-box p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.4;
 }
 
 /* ----------- بطاقات المعلومات ----------- */
@@ -97,7 +105,6 @@ body {
   background: linear-gradient(135deg, #ffffff20, #ffffff10);
 }
 
-/* السؤال */
 .info-row .q {
   font-weight: bold;
   color: #ff77c8;
@@ -105,7 +112,6 @@ body {
   font-size: 15px;
 }
 
-/* الإجابة */
 .info-row .a {
   color: #fff;
   font-size: 14px;
@@ -134,8 +140,13 @@ body {
 
     <div class="text-box">
       <div class="name">Mahmoud</div>
-      <div class="moving-text">I Love Talking To You , Even Though I Have Nothing To Say.</div>
-      <div class="moving-text">في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</div>
+      
+      <!-- صندوق الجمل -->
+      <div class="quote-box">
+        <p>I Love Talking To You , Even Though I Have Nothing To Say.</p>
+        <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
+      </div>
+      
     </div>
   </div>
 
