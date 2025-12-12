@@ -12,6 +12,8 @@ body {
   font-family: "Cairo", sans-serif;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
   padding: 40px;
   direction: rtl;
 }
@@ -19,7 +21,7 @@ body {
 /* ----------- الصورة + المعلومات ----------- */
 .wrapper {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
@@ -54,13 +56,19 @@ body {
   font-size: 26px;
   color: #ff9ada;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
+/* تحريك الجمل بالتتابع */
 .moving-text {
   font-size: 16px;
   opacity: 0;
-  animation: fadeIn 3s ease forwards;
+  animation: fadeIn 1.5s ease forwards;
 }
+
+.moving-text:nth-child(2) { animation-delay: 0s; }
+.moving-text:nth-child(3) { animation-delay: 2s; }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -108,6 +116,7 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+
 .info-row a:hover {
   text-decoration: underline;
 }
@@ -125,8 +134,8 @@ body {
 
     <div class="text-box">
       <div class="name">Mahmoud</div>
-      <div class="moving-text">I Love Talking To You , Even Thought I Have No Thing To Say.</div>
-      <div class="moving-text" style="animation-delay: 1s;">في غيابك ماتغير أي شي بس حسيت أني فاقد كل شي</div>
+      <div class="moving-text">I Love Talking To You , Even Though I Have Nothing To Say.</div>
+      <div class="moving-text">في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</div>
     </div>
   </div>
 
