@@ -207,30 +207,44 @@ body {
 
 
 
-/* للمتصفحات الحديثة (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 12px;  /* عرض السكورول */
+  width: 12px;  
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f1a;  /* لون الخلفية للسكورول */
+  background: #0b0f1a;  
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1abc9c, #3498db); /* لون الشريط */
+  background: linear-gradient(180deg, #1abc9c, #3498db); 
   border-radius: 6px;
-  border: 3px solid #0b0f1a; /* المسافة بين الشريط والحواف */
+  border: 3px solid #0b0f1a; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #3498db, #1abc9c);
 }
 
-/* للـ Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3498db #0b0f1a; /* thumb color | track color */
+  scrollbar-color: #3498db #0b0f1a;
+}
+
+
+
+
+
+  body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at bottom,
+      rgba(124, 58, 237, 0.25) 0%,
+      rgba(15, 23, 36, 0.95) 60%
+    ),
+    #0f1724;
 }
 
 </style>
