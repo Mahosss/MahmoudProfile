@@ -21,12 +21,11 @@ body {
   direction: rtl;
 }
 
-/* ----------- الهيكلية ----------- */
 .wrapper {
   display: flex;
   gap: 30px;
   justify-content: center;
-  align-items: flex-start; /* يجعل info-box يبدأ من بداية الصورة */
+  align-items: flex-start; 
   flex-wrap: wrap;
 }
 
@@ -39,10 +38,9 @@ body {
 .info-column {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* محاذاة من الأعلى مع الصورة */
+  justify-content: flex-start; 
 }
 
-/* ----------- الصورة ----------- */
 .profile-pic {
   width: 220px;
   height: 220px;
@@ -64,7 +62,6 @@ body {
   transform: scale(1.12);
 }
 
-/* ----------- الاسم ----------- */
 .text-box {
   margin-top: 10px;
   text-align: center;
@@ -73,10 +70,10 @@ body {
 .name {
   font-size: 26px;
   font-weight: bold;
-  background: linear-gradient(90deg, #1abc9c, #3498db, #1abc9c); /* ألوان شبابية */
+  background: linear-gradient(90deg, #1abc9c, #3498db, #1abc9c); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% 100%; /* لتوسيع الخلفية للانزلاق */
+  background-size: 200% 100%; 
   animation: gradient-slide 3s linear infinite;
   margin-bottom: 10px;
 }
@@ -86,12 +83,11 @@ body {
   100% { background-position: 200% 0%; }
 }
 
-/* ----------- المعلومات ----------- */
 .info-box {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 0; /* إزالة المسافة العلوية */
+  margin-top: 0; 
 }
 
 .info-row {
@@ -137,7 +133,6 @@ body {
   text-decoration: underline;
 }
 
-/* ----------- الجمل ----------- */
 .quote-box {
   background: rgba(52, 152, 219, 0.1); 
   border: 1px solid #3498db80;
@@ -158,7 +153,6 @@ body {
   line-height: 1.5;
 }
 
-/* ----------- الفيديوهات ----------- */
 .video-block {
   display: flex;
   justify-content: center;
@@ -298,11 +292,11 @@ body {
 </div>
 
 <div class="video-block">
+  <iframe src="https://www.youtube.com/embed/ahbsNVeKzkw" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/pTo5rjh7J1Y" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/RVKbjHpcDQg" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/iMZ1skkbUWI" title="YouTube video" frameborder="0" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/iS-6fT-cBYk" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-  <iframe src="https://www.youtube.com/embed/ahbsNVeKzkw" title="YouTube video" frameborder="0" allowfullscreen></iframe>
 </div>
 
 </body>
