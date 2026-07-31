@@ -23,7 +23,7 @@ body {
   position: relative;
 }
 
-/* --- 1. تأثير النجوم في الخلفية --- */
+/* --- تأثير النجوم في الخلفية --- */
 .star {
   position: absolute;
   width: 2px;
@@ -61,32 +61,15 @@ body {
   justify-content: flex-start; 
 }
 
-/* --- 2. الإطار المتوهج المتحرك للصورة --- */
+/* --- إطار الصورة الكلاسيكي بدون توهج متحرك --- */
 .profile-pic {
   width: 220px;
   height: 220px;
   border-radius: 20px;
   overflow: hidden;
-  position: relative;
-  padding: 4px; /* مسافة للإطار المتحرك */
-  background: linear-gradient(45deg, #3498db, #1abc9c, #3498db);
-  background-size: 200% 200%;
-  animation: borderGlow 4s linear infinite;
-  box-shadow: 0 0 25px rgba(52, 152, 219, 0.5);
-}
-
-@keyframes borderGlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.profile-pic-inner {
-  width: 100%;
-  height: 100%;
-  border-radius: 17px;
-  overflow: hidden;
-  background: #0b0f1a;
+  border: 3px solid #3498db; 
+  box-shadow: 0 0 25px #3498db80;
+  transition: 0.4s;
 }
 
 .profile-pic img {
@@ -191,7 +174,7 @@ body {
   line-height: 1.5;
 }
 
-/* --- مشغل الموسيقى وتصميم الموجات الصوتية --- */
+/* --- مشغل الموسيقى والموجات الصوتية --- */
 .music-player {
   background: rgba(52, 152, 219, 0.08);
   border: 1px solid rgba(52, 152, 219, 0.4);
@@ -223,7 +206,7 @@ body {
   color: #1abc9c;
 }
 
-/* --- 3. الموجات الصوتية المتحركة --- */
+/* --- الموجات الصوتية المتحركة --- */
 .sound-wave {
   display: flex;
   align-items: flex-end;
@@ -238,7 +221,6 @@ body {
   border-radius: 2px;
 }
 
-/* حالة التشغيل (تتحرك الموجات) */
 .playing .sound-wave span:nth-child(1) { animation: wave 0.8s infinite ease-in-out; }
 .playing .sound-wave span:nth-child(2) { animation: wave 0.5s infinite ease-in-out; }
 .playing .sound-wave span:nth-child(3) { animation: wave 0.7s infinite ease-in-out; }
@@ -337,11 +319,9 @@ body {
 <div class="wrapper">
 
   <div class="profile-column">
-    <!-- إطار الصورة المتوهج المتحرك -->
+    <!-- الصورة بالإطار الثابت الكلاسيكي -->
     <div class="profile-pic">
-      <div class="profile-pic-inner">
-        <img src="https://img.alfrsantv.com/img/f176506150966251.png" alt="profile">
-      </div>
+      <img src="https://img.alfrsantv.com/img/f176506150966251.png" alt="profile">
     </div>
 
     <div class="text-box">
@@ -391,13 +371,12 @@ body {
   <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
 </div>
 
-<!-- مشغل الموسيقى مع الموجات الصوتية -->
+<!-- مشغل الموسيقى والموجات الصوتية -->
 <div class="music-player" id="playerContainer">
   <div class="song-info-wrapper">
     <div class="song-title" id="songTitle">
       <i class="fas fa-music"></i> جاري التحميل...
     </div>
-    <!-- الموجات الصوتية التفاعلية -->
     <div class="sound-wave" id="soundWave">
       <span></span><span></span><span></span><span></span>
     </div>
@@ -418,9 +397,11 @@ body {
 
 <script>
   const songs = [
-    { title: "معزوفة هادئة 1", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-    { title: "لحن مميز 2", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-    { title: "موسيقى استرخاء 3", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
+    { title: "Fadel Shaker - Gowwa.ElRouh", src: "https://melodylovers.com/Song/Fadel.Shaker.Gowwa.ElRouh.mp3" },
+    { title: "Amr Diab - Wefhemt Ayneek", src: "https://melodylovers.com/Song/Amr.Diab.Wefhemt.Ayneek.mp3" },
+    { title: "Fadel Shaker - Feen Lyalek", src: "https://melodylovers.com/Song/Fadel.Shaker.Feen.Lyalek.mp3" }
+    { title: "Ramy Sabry - Ben El Hettan", src: "https://melodylovers.com/Song/Ramy.Sabry.Ben.ElHettan.mp3" }
+
   ];
 
   let songIndex = 0;
@@ -440,13 +421,13 @@ body {
   function playSong() {
     audio.play();
     playIcon.className = 'fas fa-pause';
-    playerContainer.classList.add('playing'); // تفعيل حركة الموجات الصوتية
+    playerContainer.classList.add('playing');
   }
 
   function pauseSong() {
     audio.pause();
     playIcon.className = 'fas fa-play';
-    playerContainer.classList.remove('playing'); // إيقاف حركة الموجات
+    playerContainer.classList.remove('playing');
   }
 
   playBtn.addEventListener('click', () => {
