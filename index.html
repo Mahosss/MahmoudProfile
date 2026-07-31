@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mahmoud</title>
+<title>Mahmoud - Pro Version</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
@@ -19,6 +19,25 @@ body {
   min-height: 100vh;
   padding: 40px;
   direction: rtl;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- 1. تأثير النجوم في الخلفية --- */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
 }
 
 .wrapper {
@@ -27,6 +46,7 @@ body {
   justify-content: center;
   align-items: flex-start; 
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .profile-column {
@@ -41,14 +61,32 @@ body {
   justify-content: flex-start; 
 }
 
+/* --- 2. الإطار المتوهج المتحرك للصورة --- */
 .profile-pic {
   width: 220px;
   height: 220px;
   border-radius: 20px;
   overflow: hidden;
-  border: 3px solid #3498db; 
-  box-shadow: 0 0 25px #3498db80;
-  transition: 0.4s;
+  position: relative;
+  padding: 4px; /* مسافة للإطار المتحرك */
+  background: linear-gradient(45deg, #3498db, #1abc9c, #3498db);
+  background-size: 200% 200%;
+  animation: borderGlow 4s linear infinite;
+  box-shadow: 0 0 25px rgba(52, 152, 219, 0.5);
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.profile-pic-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #0b0f1a;
 }
 
 .profile-pic img {
@@ -87,7 +125,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 0; 
 }
 
 .info-row {
@@ -144,6 +181,7 @@ body {
   backdrop-filter: blur(6px);
   box-shadow: 0 0 15px #3498db80;
   text-align: center;
+  z-index: 1;
 }
 
 .quote-box p {
@@ -153,7 +191,7 @@ body {
   line-height: 1.5;
 }
 
-/* --- مشغل الموسيقى الجديد --- */
+/* --- مشغل الموسيقى وتصميم الموجات الصوتية --- */
 .music-player {
   background: rgba(52, 152, 219, 0.08);
   border: 1px solid rgba(52, 152, 219, 0.4);
@@ -169,15 +207,46 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  z-index: 1;
+}
+
+.song-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .song-title {
   font-size: 16px;
   font-weight: bold;
   color: #1abc9c;
+}
+
+/* --- 3. الموجات الصوتية المتحركة --- */
+.sound-wave {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 3px;
+  height: 15px;
+}
+
+.sound-wave span {
+  width: 3px;
+  height: 4px;
+  background: #3498db;
+  border-radius: 2px;
+}
+
+/* حالة التشغيل (تتحرك الموجات) */
+.playing .sound-wave span:nth-child(1) { animation: wave 0.8s infinite ease-in-out; }
+.playing .sound-wave span:nth-child(2) { animation: wave 0.5s infinite ease-in-out; }
+.playing .sound-wave span:nth-child(3) { animation: wave 0.7s infinite ease-in-out; }
+.playing .sound-wave span:nth-child(4) { animation: wave 0.4s infinite ease-in-out; }
+
+@keyframes wave {
+  0%, 100% { height: 4px; }
+  50% { height: 15px; background: #1abc9c; }
 }
 
 .progress-area {
@@ -243,50 +312,36 @@ body {
     align-items: center;
     gap: 20px;
   }
-
-  .info-box, .profile-pic {
+  .info-box, .profile-pic, .music-player, .quote-box {
     width: 90%; 
     max-width: 300px;
   }
-
-  .music-player, .quote-box {
-    width: 90%;
-  }
 }
 
-::-webkit-scrollbar {
-  width: 12px;  
-}
-
-::-webkit-scrollbar-track {
-  background: #0b0f1a;  
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1abc9c, #3498db); 
-  border-radius: 6px;
-  border: 3px solid #0b0f1a; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #3498db, #1abc9c);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3498db #0b0f1a;
-}
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #0b0f1a; border-radius: 6px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #1abc9c, #3498db); border-radius: 6px; border: 3px solid #0b0f1a; }
 </style>
 </head>
 
 <body>
 
+<!-- النجوم في الخلفية -->
+<div class="star" style="top: 10%; left: 15%;"></div>
+<div class="star" style="top: 25%; left: 80%;"></div>
+<div class="star" style="top: 55%; left: 10%;"></div>
+<div class="star" style="top: 75%; left: 85%;"></div>
+<div class="star" style="top: 35%; left: 45%;"></div>
+<div class="star" style="top: 85%; left: 30%;"></div>
+
 <div class="wrapper">
 
   <div class="profile-column">
+    <!-- إطار الصورة المتوهج المتحرك -->
     <div class="profile-pic">
-      <img src="https://img.alfrsantv.com/img/f176506150966251.png" alt="profile">
+      <div class="profile-pic-inner">
+        <img src="https://img.alfrsantv.com/img/f176506150966251.png" alt="profile">
+      </div>
     </div>
 
     <div class="text-box">
@@ -336,10 +391,16 @@ body {
   <p>في غيابك ما تغير أي شيء، بس حسيت أني فاقد كل شيء</p>
 </div>
 
-<!-- مشغل الموسيقى -->
-<div class="music-player">
-  <div class="song-title" id="songTitle">
-    <i class="fas fa-music"></i> جاري التحميل...
+<!-- مشغل الموسيقى مع الموجات الصوتية -->
+<div class="music-player" id="playerContainer">
+  <div class="song-info-wrapper">
+    <div class="song-title" id="songTitle">
+      <i class="fas fa-music"></i> جاري التحميل...
+    </div>
+    <!-- الموجات الصوتية التفاعلية -->
+    <div class="sound-wave" id="soundWave">
+      <span></span><span></span><span></span><span></span>
+    </div>
   </div>
   
   <div class="progress-area" id="progressArea">
@@ -356,12 +417,10 @@ body {
 </div>
 
 <script>
-
   const songs = [
-    { title: "Fadel Shaker - Gowwa.ElRouh", src: "https://melodylovers.com/Song/Fadel.Shaker.Gowwa.ElRouh.mp3" },
-    { title: "Amr Diab - Wefhemt Ayneek", src: "https://melodylovers.com/Song/Amr.Diab.Wefhemt.Ayneek.mp3" },
-    { title: "Fadel Shaker - Feen Lyalek", src: "https://melodylovers.com/Song/Fadel.Shaker.Feen.Lyalek.mp3" }
-    { title: "Ramy Sabry - Ben El Hettan", src: "https://melodylovers.com/Song/Ramy.Sabry.Ben.ElHettan.mp3" }
+    { title: "معزوفة هادئة 1", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { title: "لحن مميز 2", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+    { title: "موسيقى استرخاء 3", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
   ];
 
   let songIndex = 0;
@@ -371,6 +430,7 @@ body {
   const playIcon = document.getElementById('playIcon');
   const progressBar = document.getElementById('progressBar');
   const progressArea = document.getElementById('progressArea');
+  const playerContainer = document.getElementById('playerContainer');
 
   function loadSong(song) {
     songTitle.innerHTML = `<i class="fas fa-music"></i> ${song.title}`;
@@ -380,11 +440,13 @@ body {
   function playSong() {
     audio.play();
     playIcon.className = 'fas fa-pause';
+    playerContainer.classList.add('playing'); // تفعيل حركة الموجات الصوتية
   }
 
   function pauseSong() {
     audio.pause();
     playIcon.className = 'fas fa-play';
+    playerContainer.classList.remove('playing'); // إيقاف حركة الموجات
   }
 
   playBtn.addEventListener('click', () => {
@@ -427,7 +489,6 @@ body {
 
   audio.addEventListener('ended', nextSong);
 
-  // تحميل الأغنية الأولى عند البداية
   loadSong(songs[songIndex]);
 </script>
 
